@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        @apply font-sans antialiased text-gray-800;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-bold tracking-tight;
+    }
+}
+
+@layer components {
+    /* Section title */
+    .section-title {
+        @apply text-3xl md:text-4xl font-bold text-brand-navy mb-4;
+    }
+
+    .section-subtitle {
+        @apply text-lg text-gray-500 mb-12 max-w-2xl mx-auto;
+    }
+
+    /* Card base */
+    .card {
+        @apply bg-white rounded-2xl shadow-lg p-6 transition-all duration-300;
+    }
+
+    .card:hover {
+        @apply shadow-xl -translate-y-1;
+    }
+
+    /* Feature icon wrapper */
+    .feature-icon {
+        @apply w-14 h-14 rounded-xl flex items-center justify-center mb-4;
+        background: linear-gradient(135deg, #1e3a8a15, #f9731620);
+    }
+
+    /* Nav link */
+    .nav-link {
+        @apply text-gray-600 hover:text-brand-navy font-medium transition-colors duration-200 relative;
+    }
+
+    .nav-link::after {
+        content: '';
+        @apply absolute bottom-0 left-0 w-0 h-0.5 bg-brand-orange transition-all duration-300;
+    }
+
+    .nav-link:hover::after {
+        @apply w-full;
+    }
+
+    /* Form inputs */
+    .form-input {
+        @apply w-full px-4 py-3 border border-gray-200 rounded-xl text-gray-800 placeholder-gray-400
+               focus:outline-none focus:ring-2 focus:ring-brand-navy focus:border-transparent
+               transition-all duration-200 bg-white;
+    }
+
+    .form-input.error {
+        @apply border-red-400 focus:ring-red-400;
+    }
+
+    /* Section wrapper */
+    .section-wrapper {
+        @apply py-20 px-4;
+    }
+
+    /* Gradient hero background */
+    .hero-gradient {
+        background: linear-gradient(135deg, #0f1f5c 0%, #1e3a8a 50%, #1e40af 100%);
+    }
+
+    /* Glass card */
+    .glass-card {
+        @apply bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl;
+    }
+
+    /* Animated underline heading */
+    .gradient-text {
+        background: linear-gradient(135deg, #f97316, #fb923c);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+}
+
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
+
+    .animate-delay-100 { animation-delay: 100ms; }
+    .animate-delay-200 { animation-delay: 200ms; }
+    .animate-delay-300 { animation-delay: 300ms; }
+    .animate-delay-400 { animation-delay: 400ms; }
+    .animate-delay-500 { animation-delay: 500ms; }
+}
